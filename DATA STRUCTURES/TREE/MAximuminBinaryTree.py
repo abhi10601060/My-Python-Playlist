@@ -13,17 +13,15 @@ root.right.left=Node(40)
 root.right.right=Node(50)
 
 
+def maximum(root):
+	if root==None :
+		return -10000
 
-def size(root):
-	if(root==None):
-		return 0
-	else:
-		ls=size(root.left)
-		rs=size(root.right)
-
-		return ls + rs + 1
+	ls=maximum(root.left)
+	rs=maximum(root.right)
 
 
+	return max(root.val,ls,rs)
 
-ans=size(root)
+ans=maximum(root)
 print(ans)
