@@ -1,5 +1,7 @@
 def insert(root, Key):
     # code here
+    if (root==None):
+        return Node(Key)
     
     cur = root 
     pre=None
@@ -14,7 +16,7 @@ def insert(root, Key):
             pre=cur
             cur=cur.left
         
-        
+    
     if(Key>pre.data):
         pre.right=Node(Key)
     else:
