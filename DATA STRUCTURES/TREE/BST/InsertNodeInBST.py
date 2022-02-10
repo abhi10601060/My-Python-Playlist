@@ -23,3 +23,18 @@ def insert(root, Key):
         pre.left=Node(Key)
     
     return root
+
+
+def recursiveInsert(root,Key):
+    if(root==None):
+        return Node(Key)
+
+    if(root.data==Key):
+        return root
+
+    elif(Key>root.data):
+        root.right=recursiveInsert(root.right,Key)
+    else:
+        root.left=recursiveInsert(root.left,Key)
+
+    return root
